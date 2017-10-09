@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ZLMImageGalleryVC.h
 //  ZLMImageGallery
 //
 //  Created by chuonghm on 10/5/17.
@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZLMGalleryView.h"
 
-@interface ViewController : UIViewController
-
+@interface ZLMImageGalleryVC: UIViewController<ZLMGalleryViewDelegate>
 
 @end
 
