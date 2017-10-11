@@ -27,7 +27,7 @@ typedef NS_ENUM( NSUInteger, ZLMLibraryAuthorizationStatus) {
 /**
  Object for load image from phone's library
  */
-@interface ZLMImageLoader : NSObject
+@interface ZLMImageLoader<PHPhotoLibraryChangeObserver> : NSObject
 
 + (instancetype)sharedInstance;
 
@@ -38,8 +38,17 @@ typedef NS_ENUM( NSUInteger, ZLMLibraryAuthorizationStatus) {
 
  @param completion completion to callback
  @param queue queue to callback
+ @param isChangedObserver is callback when library's changed
  */
 - (void)getImagesFromLibraryWithCompletion:(void(^)(ZLMLibraryAuthorizationStatus grantedStatus, NSError *error, NSArray<ZLMImage *> *images))completion
-                                     queue:(dispatch_queue_t)queue;
+                                     queue:(dispatch_queue_t)queue
+                           changedObserver:(BOOL)isChangedObserver;
+
+/**
+ Request permission to access photos
+
+ @param completion completion called when request permission done
+ */
+- (void)requestPermission:(void(^)(void))completion;
 
 @end

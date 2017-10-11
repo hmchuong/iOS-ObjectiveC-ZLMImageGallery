@@ -10,10 +10,12 @@
 #import "ZLMGalleryView.h"
 #import "ZLMImageGalleryItemNIO.h"
 #import "ZLMImageLoader.h"
+#import "ZLMPhotoDetailVC.h"
 
 @interface ZLMImageGalleryVC ()
 
 @property (weak, nonatomic) IBOutlet ZLMGalleryView *galleryView;
+@property (strong, nonatomic) NSArray<ZLMImage *> *images;
 
 @end
 
@@ -22,7 +24,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _galleryView.delegate = self;
-    [[ZLMImageLoader sharedInstance] getImagesFromLibraryWithCompletion:^(ZLMLibraryAuthorizationStatus grantedStatus, NSError *error, NSArray<ZLMImage *> *images) {
+    [self loadPhotosFromLibrary];
+    
+}
+
+- (void)loadPhotosFromLibrary {
+    ZLMImageLoader *imageLoader = [ZLMImageLoader sharedInstance];
+    [imageLoader getImagesFromLibraryWithCompletion:^(ZLMLibraryAuthorizationStatus grantedStatus, NSError *error, NSArray<ZLMImage *> *images) {
+        _images = images;
+        if (grantedStatus == ZLMLibAuthNotDetermined) {
+            
+            [imageLoader requestPermission:^{
+                [self loadPhotosFromLibrary];
+            }];
+            return;
+        }
+        
         NSMutableArray<ZLMImageGalleryItemNIO *> *items = [[NSMutableArray alloc] init];
         if (images != nil) {
             for (ZLMImage *image in images) {
@@ -31,18 +48,17 @@
             }
         }
         [_galleryView setItems:items];
-    } queue:nil];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    } queue:nil changedObserver:YES];
 }
 
 - (void)ZLMGalleryView:(ZLMGalleryView *)galleryView didSelectItemAtIndex:(NSUInteger)index {
     
-    NSLog(@"%lu",(unsigned long)index);
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ZLMPhotoDetailVC* detailController = [storyboard instantiateViewControllerWithIdentifier:@"ZLMPhotoDetail"];
+    detailController.images = _images;
+    detailController.currentIndex = index;
+    
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 
