@@ -68,6 +68,7 @@
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
+    // Create collection view
     _galleryCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[self flowLayout]];
     
     _galleryCollectionView.delegate = self;
@@ -81,11 +82,11 @@
     
     [self addSubview:_galleryCollectionView];
     
-    // Collection view -----
+    // Constraints
     // ----- Top
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_galleryCollectionView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
     
-    // ----- Height
+    // ----- Bottom
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_galleryCollectionView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
     
     // ----- Leading and trailing
@@ -98,7 +99,7 @@
  @return flow layout of collection view
  */
 - (UICollectionViewFlowLayout *)flowLayout {
-
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];    flowLayout.itemSize = [self getItemSize];
     flowLayout.sectionInset = UIEdgeInsetsMake(_minSpace, _minSpace, _minSpace, _minSpace);
@@ -147,12 +148,14 @@
     }
 }
 
-#pragma mark - Utilities
-
 - (CGSize)getItemSize {
     
     CGFloat cellWidth = ([UIScreen mainScreen].bounds.size.width - _minSpace * (_numOfItemsPerRow + 1))/ _numOfItemsPerRow;
     return CGSizeMake(cellWidth, cellWidth);
+}
+
+- (NSUInteger)numberOfItems {
+    return [_items count];
 }
 
 #pragma mark - NimbusDelegate

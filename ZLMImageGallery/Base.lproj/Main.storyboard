@@ -37,39 +37,49 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaO-pO-ykX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-mz-TXf">
-                                        <rect key="frame" x="10" y="6" width="37" height="30"/>
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-mz-TXf">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="GYQ-ew-pZ9"/>
+                                            <constraint firstAttribute="height" constant="50" id="PET-12-T43"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="doneBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fRn-do-djv"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbb-jt-fv9">
-                                        <rect key="frame" x="140" y="10" width="93.5" height="21"/>
+                                        <rect key="frame" x="140" y="14" width="93.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" restorationIdentifier="interactionView" translatesAutoresizingMaskIntoConstraints="NO" id="Oik-Ro-pug" userLabel="InteractionView">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Oik-Ro-pug" firstAttribute="leading" secondItem="Qpq-FN-2d6" secondAttribute="leading" id="2Ta-4h-R44"/>
                                     <constraint firstItem="TaO-pO-ykX" firstAttribute="bottom" secondItem="qbb-jt-fv9" secondAttribute="bottom" constant="10" id="3Ft-TJ-dZ7"/>
                                     <constraint firstItem="qbb-jt-fv9" firstAttribute="centerX" secondItem="Qpq-FN-2d6" secondAttribute="centerX" id="5DV-i7-vTN"/>
                                     <constraint firstItem="mAq-lR-4Vd" firstAttribute="leading" secondItem="Qpq-FN-2d6" secondAttribute="leading" id="90w-jq-Lcw"/>
                                     <constraint firstItem="qbb-jt-fv9" firstAttribute="baseline" secondItem="CzF-mz-TXf" secondAttribute="baseline" id="Abb-9o-Fdv"/>
                                     <constraint firstItem="TaO-pO-ykX" firstAttribute="top" secondItem="Qpq-FN-2d6" secondAttribute="top" id="GMK-kF-ArX"/>
-                                    <constraint firstItem="qbb-jt-fv9" firstAttribute="top" secondItem="Qpq-FN-2d6" secondAttribute="top" constant="10" id="IGP-f0-lQ9"/>
+                                    <constraint firstItem="Oik-Ro-pug" firstAttribute="bottom" secondItem="CzF-mz-TXf" secondAttribute="bottom" constant="10" id="HVa-1B-dXS"/>
                                     <constraint firstAttribute="trailing" secondItem="mAq-lR-4Vd" secondAttribute="trailing" id="OVQ-rM-DFH"/>
-                                    <constraint firstItem="CzF-mz-TXf" firstAttribute="leading" secondItem="Qpq-FN-2d6" secondAttribute="leading" constant="10" id="SoJ-yK-8lk"/>
+                                    <constraint firstItem="CzF-mz-TXf" firstAttribute="leading" secondItem="Qpq-FN-2d6" secondAttribute="leading" id="SoJ-yK-8lk"/>
                                     <constraint firstItem="TaO-pO-ykX" firstAttribute="leading" secondItem="Qpq-FN-2d6" secondAttribute="leading" id="Zla-s7-6bA"/>
+                                    <constraint firstItem="Oik-Ro-pug" firstAttribute="top" secondItem="Qpq-FN-2d6" secondAttribute="top" id="gAb-Pu-7mb"/>
                                     <constraint firstItem="mAq-lR-4Vd" firstAttribute="top" secondItem="Qpq-FN-2d6" secondAttribute="top" id="iAo-dr-XLr"/>
+                                    <constraint firstItem="Oik-Ro-pug" firstAttribute="trailing" secondItem="CzF-mz-TXf" secondAttribute="trailing" constant="30" id="jMF-W3-2ip"/>
                                     <constraint firstAttribute="trailing" secondItem="TaO-pO-ykX" secondAttribute="trailing" id="mKq-z4-Xek"/>
+                                    <constraint firstItem="CzF-mz-TXf" firstAttribute="top" secondItem="Qpq-FN-2d6" secondAttribute="top" id="rwT-aD-J8G"/>
                                     <constraint firstAttribute="bottom" secondItem="mAq-lR-4Vd" secondAttribute="bottom" id="vXR-oe-ay4"/>
+                                    <constraint firstItem="TaO-pO-ykX" firstAttribute="trailing" secondItem="CzF-mz-TXf" secondAttribute="leading" constant="375" id="z6D-P5-dtZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -90,6 +100,7 @@
                         <outlet property="detailView" destination="Qpq-FN-2d6" id="VoP-Y0-qyb"/>
                         <outlet property="galleryView" destination="ONZ-wH-rQZ" id="3ag-ya-p5D"/>
                         <outlet property="imageNameLbl" destination="qbb-jt-fv9" id="WsX-Dt-pgx"/>
+                        <outlet property="interactionView" destination="Oik-Ro-pug" id="gmp-OR-eXh"/>
                         <outlet property="pagerView" destination="mAq-lR-4Vd" id="MCq-5A-Nsr"/>
                     </connections>
                 </viewController>

@@ -66,6 +66,11 @@
  */
 - (CGSize)getItemSize;
 
+/**
+ Get number of items in gallery
 
+ @return number of items
+ */
+- (NSUInteger)numberOfItems;
 
 @end

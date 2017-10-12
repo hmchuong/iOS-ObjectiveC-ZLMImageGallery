@@ -20,14 +20,19 @@
     return self;
 }
 
+/**
+ Set up view
+ */
 - (void)setupView {
     
+    // Set up UIImageView
     _thumbnail = [[UIImageView alloc] initWithFrame:CGRectZero];
     _thumbnail.contentMode = UIViewContentModeScaleToFill;
     _thumbnail.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.contentView addSubview:_thumbnail];
     
+    // Constraints
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[thumbnail]|" options:0 metrics:nil views:@{@"thumbnail":_thumbnail}]];
     
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[thumbnail]|" options:0 metrics:nil views:@{@"thumbnail":_thumbnail}]];

@@ -57,6 +57,7 @@
     if (_requestOptions == nil) {
         _requestOptions = [[PHImageRequestOptions alloc] init];
         _requestOptions.synchronous = true;
+        _requestOptions.networkAccessAllowed = YES;
     }
     
     UIImage *__block image;
@@ -67,7 +68,7 @@
                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                        image = result;
                                                        NSURL *path = [info objectForKey:@"PHImageFileURLKey"];
-                                                       _name = [path lastPathComponent];
+                                                       _name = (path != nil) ? [path lastPathComponent]: @"Untitled";
                                                    }];
     return image;
 }
