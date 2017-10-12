@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZLMGalleryView.h"
+@import FSPagerView;
 
-@interface ZLMImageGalleryVC: UIViewController<ZLMGalleryViewDelegate>
+@interface ZLMImageGalleryVC: UIViewController<ZLMGalleryViewDelegate, FSPagerViewDataSource, FSPagerViewDelegate>
 
 @end
 

@@ -17,7 +17,6 @@
 		C84C95D51F86342500D1EE99 /* ZLMImageGalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84C95D41F86342500D1EE99 /* ZLMImageGalleryTests.m */; };
 		C84C95E01F86342500D1EE99 /* ZLMImageGalleryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84C95DF1F86342500D1EE99 /* ZLMImageGalleryUITests.m */; };
 		C85AA6D01F8DD59E000ED769 /* ZLMImageLoaderCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = C85AA6CF1F8DD59E000ED769 /* ZLMImageLoaderCallback.m */; };
-		C87F4ADD1F8E0A1200F9E641 /* ZLMPhotoDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87F4ADC1F8E0A1200F9E641 /* ZLMPhotoDetailVC.m */; };
 		C8AD9AAE1F8B10FE00953861 /* ZLMGalleryItemNIO.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD9AAD1F8B10FE00953861 /* ZLMGalleryItemNIO.m */; };
 		C8AD9AB11F8B13DA00953861 /* ZLMGalleryItemNICell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD9AB01F8B13DA00953861 /* ZLMGalleryItemNICell.m */; };
 		C8AD9AB41F8B1AF500953861 /* ZLMGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD9AB31F8B1AF500953861 /* ZLMGalleryView.m */; };
@@ -79,8 +78,6 @@
 		C84C95E11F86342500D1EE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C85AA6CE1F8DD59E000ED769 /* ZLMImageLoaderCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLMImageLoaderCallback.h; sourceTree = "<group>"; };
 		C85AA6CF1F8DD59E000ED769 /* ZLMImageLoaderCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLMImageLoaderCallback.m; sourceTree = "<group>"; };
-		C87F4ADB1F8E0A1200F9E641 /* ZLMPhotoDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLMPhotoDetailVC.h; sourceTree = "<group>"; };
-		C87F4ADC1F8E0A1200F9E641 /* ZLMPhotoDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLMPhotoDetailVC.m; sourceTree = "<group>"; };
 		C8AD9AAC1F8B10FE00953861 /* ZLMGalleryItemNIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLMGalleryItemNIO.h; sourceTree = "<group>"; };
 		C8AD9AAD1F8B10FE00953861 /* ZLMGalleryItemNIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLMGalleryItemNIO.m; sourceTree = "<group>"; };
 		C8AD9AAF1F8B13DA00953861 /* ZLMGalleryItemNICell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLMGalleryItemNICell.h; sourceTree = "<group>"; };
@@ -280,8 +277,6 @@
 			children = (
 				C8AD9ABC1F8B349500953861 /* ZLMImageGalleryVC.h */,
 				C8AD9ABD1F8B349500953861 /* ZLMImageGalleryVC.m */,
-				C87F4ADB1F8E0A1200F9E641 /* ZLMPhotoDetailVC.h */,
-				C87F4ADC1F8E0A1200F9E641 /* ZLMPhotoDetailVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -673,7 +668,6 @@
 				C8AD9AC61F8B5A7700953861 /* ZLMImage.m in Sources */,
 				C8AD9ABB1F8B344E00953861 /* ZLMImageGalleryItemNIO.m in Sources */,
 				C8AD9AAE1F8B10FE00953861 /* ZLMGalleryItemNIO.m in Sources */,
-				C87F4ADD1F8E0A1200F9E641 /* ZLMPhotoDetailVC.m in Sources */,
 				C85AA6D01F8DD59E000ED769 /* ZLMImageLoaderCallback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

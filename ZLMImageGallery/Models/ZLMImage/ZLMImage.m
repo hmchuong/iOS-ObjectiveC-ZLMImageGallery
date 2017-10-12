@@ -66,6 +66,8 @@
                                                          options:_requestOptions
                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                        image = result;
+                                                       NSURL *path = [info objectForKey:@"PHImageFileURLKey"];
+                                                       _name = [path lastPathComponent];
                                                    }];
     return image;
 }
